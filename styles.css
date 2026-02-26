@@ -7,6 +7,6 @@ h1 {
   font-size: 75px;
   color:maroon;
 }
-head {
+html {
   background-color: linear-gradient(180deg,black,maroon,red,orangered,orange,);
 }
