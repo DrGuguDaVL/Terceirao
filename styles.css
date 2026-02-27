@@ -1,15 +1,50 @@
-h1 {
-  background-color: linear-gradient(180deg,black,maroon,red,orangered,orange,);
-  font-family: "Eater", serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  font-size: 75px;
-  color:maroon;
-}
-head {
-  background-color: linear-gradient(180deg,black,maroon,red,orangered,orange,);
-}
 body {
-  background-color: linear-gradient(180deg,black,maroon,red,orangered,orange,);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+/* Flame layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 100%, 
+      #ffae00 0%,
+      #ff6a00 20%,
+      #ff2a00 40%,
+      #b30000 60%,
+      #000000 80%);
+  animation: flames 3s infinite ease-in-out alternate;
+  filter: blur(30px);
+  transform-origin: bottom;
+}
+
+/* Flicker animation */
+@keyframes flames {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(1.1) scaleX(0.95);
+  }
+  100% {
+    transform: scaleY(1.2) scaleX(1.05);
+  }
+}
+
+/* Your title styling */
+h1 {
+  position: relative;
+  z-index: 1;
+  font-family: "Eater", serif;
+  font-size: 75px;
+  text-align: center;
+  color: #ffae00;
+  margin-top: 200px;
+  text-shadow: 
+    0 0 10px #ff4500,
+    0 0 20px #ff0000,
+    0 0 40px #ffae00;
 }
